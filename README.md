@@ -1,14 +1,14 @@
 There are several files that you will need as they comprise the newton's model solver for the first part of Assignment 1.
 
-The first file is "solver2_file", which contains the algorithm for newton's method. In the file, users will be asked to input:
+The first file, contained in the src/newtonsmethod folder, is "solver_main", which contains the algorithm for newton's method. In the file, users will be asked to input:
 1. Integer value for function type
 2. Integer value for number of iterations
 3. Numerical value for x_0.
 
-The second file is "function2_file", that the main file (solver2_file) will run and which contains functions that the solver will call upon when it is run.
+The second file is "solver_functions", that the main file (solver_main) will run and which contains functions that the solver will call upon when it is run.
 
 Example Run:
-On starting (running) the solver2_file, after simply:
+On starting (running) the solver_main, after simply:
 1. Inputting a integer value for which function the solver will use (can choose from functions 1, 2, 3, or 4, unforunately 5 is still being worked on)
 2. Inputting an integer value for number of iterations
 3. Inputting some value for x_0 (can be positive or negative, can be a decmical or a whole number)
