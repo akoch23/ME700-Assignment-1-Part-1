@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         platform: [macos-latest, ubuntu-latest, windows-latest]
-        python-version: ["3.12.8"]
+        python-version: ["3.12.9"]
     
     steps:
     - name: Check out repository
@@ -36,9 +36,6 @@ jobs:
 
     - name: Install test dependencies
       run: pip install pytest pytest-cov
-  
-    - name: Run tests
-      run: pytest -v
       
     - name: Run tests with Codecov coverage report
       run: pytest --cov=newtonsmethod --cov-report=xml
