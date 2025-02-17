@@ -21,10 +21,10 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Set up Python 3.10
+    - name: Set up Python 3.12
       uses: actions/setup-python@v5
       with:
-        python-version: "3.10"
+        python-version: "3.12.8"
         
     - name: Install dependencies
       run: pip install -e
@@ -34,8 +34,9 @@ jobs:
   
     - name: Run tests
       run: pytest -v
-    - name: Generate Codecov coverage report
-      run: pytest --cov-newtonsmethod --cov_report=xml
+      
+    - name: Run tests with Codecov coverage report
+      run: pytest --cov=newtonsmethod --cov-report=xml
       
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
