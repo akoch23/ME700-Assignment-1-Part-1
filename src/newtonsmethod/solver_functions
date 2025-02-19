@@ -1,7 +1,4 @@
 
-#!/usr/bin/env python
-# coding: utf-8
-
 def newton_function_1(x: float):
     # Example Parabolic Function
     # Given a float value, will substitute it for variables in below equation and return value. Used to determine the values of f(a), f(b), and f(c) 
