@@ -8,12 +8,10 @@ def float_input(prompt):
         except ValueError:
             print("Please enter a valid integer.")
 
-func_select = int(input("Enter an integer value from 1 - 4 to select the function to be used by the solver: "))
+func_select = int(input("Enter an integer value from 1 - 5 to select the function to be used by the solver: "))
 # Function that, based on integer input value, will select from externally defined functions 1, 2, 3, 4, or 5 to be used by the solver.
 try:
-    if func_select < 1 or func_select > 5:
-            ValueError
-    elif func_select == 1:
+    if func_select == 1:
             main_function = newton_function_1
             prime_function = newton_function_1_prime
             
@@ -32,6 +30,7 @@ try:
     elif func_select == 5:
             main_function = newton_function_5
             prime_function = newton_function_5_prime
+    else:
             
 except ValueError:
     print("Please select a number from 1 to 4.")
