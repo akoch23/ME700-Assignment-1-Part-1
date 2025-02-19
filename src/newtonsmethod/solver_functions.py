@@ -66,7 +66,7 @@ def newton_method(x:float, i:float):
     for iterations in range(0,i):
         y = main_function(x)
         z = prime_function(x)
-    
+        while 
         x_n = x - (y/z)
         print(f"Iteration {iterations + 1}: x_{iterations + 1} = {x_n}, f(x)= {main_function(x)}")
         x = x_n
