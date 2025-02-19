@@ -44,5 +44,3 @@ x_input = float_input("Enter an integer value for x_0: ")
 final_result = newton_method(x_input, iter_number)
 print(f"Final x_n after {iter_number} iterations is: {final_result}")
 
-
-# In[ ]:
