@@ -1,5 +1,4 @@
-
-
+import numpy as np
 
 def example_SOE_1(x: float):
     function_1 = x[1]**3 - 4*x[2]**2 + 1
