@@ -8,7 +8,7 @@ def float_input(prompt):
         except ValueError:
             print("Please enter a valid integer.")
 
-func_select = int(input("Enter an integer value from 1 - 5 to select the function to be used by the solver: "))
+func_select = int(input("Enter an integer value from 1 - 5 to select the function group to be used by the solver: "))
 # Function that, based on integer input value, will select from externally defined functions 1, 2, 3, 4, or 5 to be used by the solver.
 try:
     if func_select == 1:
