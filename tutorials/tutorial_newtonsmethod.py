@@ -1,11 +1,13 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[43]:
-
-
 import numpy as np
-get_ipython().run_line_magic('run', 'newtonsmethod_main.ipynb')
+import newtonsmethod_main as nms
+
+# Example 1:
+
+
+
+
+
+
 
 
 x_0 = np.array([1.0, 0.5])
@@ -42,12 +44,8 @@ jacobian = [
 ]
                       
 
-result = newtons_method(x_0, residual, jacobian, tol, iterations_max)
+result = nms.newtons_method(x_0, residual, jacobian, tol, iterations_max)
 print(result)
-
-
-# In[ ]:
-
 
 
 
