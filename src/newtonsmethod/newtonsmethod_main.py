@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 import numpy as np
 
 def calc_residual(x, residual):
@@ -65,9 +59,6 @@ def newtons_method(x, residual, jacobian, tol, iterations_max):
     
     result = print("By iteration ", iter, "the solution is: ", x)
     return x
-
-
-# In[ ]:
 
 
 
