@@ -15,6 +15,8 @@ def test_calc_residual():
 
     residual = [func_1,func_2]
 
+    known = np.array([[],[]])
+
     
 def test_calc_jacobian():
 
