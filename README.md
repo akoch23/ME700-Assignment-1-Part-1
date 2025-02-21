@@ -16,32 +16,32 @@
 ### Conda environment installation and testing
 
 To install this package, first establish a new conda environment:
-'''bash
+```bash
 conda create --name newtons-method-solver-env python=3.12
-'''
+```
 Afterwards, activate the environment:
-'''bash
+```bash
 conda activate newtons-method-solver-env
-'''
+```
 
 You can double check if the installed version of python is indeed version 3.12 in the new conda environment:
-'''bash
+```bash
 python --version
-'''
+```
 
 Ensure that pip is using the latest version of setuptools:
-'''bash
+```bash
 pip install --upgrade pip setuptools wheel
-'''
+```
 
 Create an editable install of the newton's method code (reminder: make sure you're in the right directory for this step, using the cd: [insert folder path] command)
-'''bash
+```bash
 pip install -e .
-'''
+```
 
 Test that the code is working with pytest:
-'''bash
+```bash
 pytest -v --cov=newtonsmethod --cov-report term-missing
-'''
+```
 
 Code coverage should be 100%
