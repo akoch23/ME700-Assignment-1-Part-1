@@ -1,5 +1,4 @@
 import numpy as np
-import src/newtonsmethod.newtonsmethod_main as nms
 import pytest
  
 
