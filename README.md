@@ -45,3 +45,20 @@ pytest -v --cov=newtonsmethod --cov-report term-missing
 ```
 
 Code coverage should be 100%
+
+
+## Solver Description
+
+### Variables
+
+`x`: initial guess, either a singular value or a pair in 1D array format
+`residual`: 1D array, containing function(s) to be solved
+`jacobian`: Jacobian matrix containing derivatives of functions in "residual"
+`iterations_max`: Maximum allowable iterations for the solver  
+`tol`: Desired tolerance amount for convergence  
+
+### Files
+
+* *src/newtonsmethod/newtonsmethod_main.py*: Contains main functions for iteratively calculating residual and jacobian matrices and implementing them in Newton's Method
+* *tests/test_newtonsmethod.py*: Test commands for main file *newtonsmethod_main.py*
+* *tutorial/tutorial_newtonsmethod.py*: Tutorial file containing five example problems that can be copied and run
