@@ -45,9 +45,10 @@ def newtons_method(x, residual, jacobian, tol, iter_max):
 
     R = calc_residual(x,residual)
     J = calc_jacobian(x, jacobian)
-    
-    print("Initial residual:", R)
-    print("Initial Jacobian:", J)
+
+# Debug checks 
+#  print("Initial residual:", R)
+#  print("Initial Jacobian:", J)
     
     try:
         J_inv = np.linalg.inv(J)
@@ -63,11 +64,10 @@ def newtons_method(x, residual, jacobian, tol, iter_max):
         R = calc_residual(x_new, residual)
         J = calc_jacobian(x_new, jacobian)
 
- # Debug checks       
- #       print(f"Iteration {iter}:")
- #       print("Residual:", R)
- #       print("Jacobian:", J)
-        
+# Debug checks       
+#       print(f"Iteration {iter}:")
+#       print("Residual:", R)
+#       print("Jacobian:", J)
         
         try:
             J_inv = np.linalg.inv(J)
