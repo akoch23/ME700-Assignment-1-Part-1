@@ -1,3 +1,6 @@
+
+NOTE: PLEASE USE/PASTE ONLY THE CODE FOR A SINGULAR EXAMPLE AT A TIME, DO NOT ATTEMPT TO RUN THE ENTIRE FILE.
+----------------------------------------------------------------------------------------------------------------------------
 # Import necessary pacakges
 import numpy as np
 import newtonsmethod_main as nms
