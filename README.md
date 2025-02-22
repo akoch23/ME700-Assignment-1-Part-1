@@ -51,11 +51,11 @@ Code coverage should be 100%
 
 ### Variables
 
-`x`: initial guess, either a singular value or a pair in 1D array format
-`residual`: 1D array, containing function(s) to be solved
-`jacobian`: Jacobian matrix containing derivatives of functions in "residual"
-`iterations_max`: Maximum allowable iterations for the solver  
-`tol`: Desired tolerance amount for convergence  
+* `x`: initial guess, either a singular value or a pair in 1D array format
+* `residual`: 1D array, containing function(s) to be solved
+* `jacobian`: Jacobian matrix containing derivatives of functions in "residual"
+* `iterations_max`: Maximum allowable iterations for the solver  
+* `tol`: Desired tolerance amount for convergence  
 
 ### Files
 
