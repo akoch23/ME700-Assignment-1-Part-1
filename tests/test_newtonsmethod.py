@@ -1,4 +1,5 @@
 import numpy as np
+import src.newtonsmethod.newtonsmethod_main as nms
 import pytest
  
 
@@ -15,7 +16,7 @@ def test_calc_residual():
     x = np.array([1.0, 0.5])
 
     known = np.array([0.0, 0.25])  # Residual for x = [1.0, 0.5]
-    found = calc_residual(x, residual)
+    found = nms.calc_residual(x, residual)
 
 
 def test_calc_jacobian():
@@ -39,7 +40,7 @@ def test_calc_jacobian():
     x = np.array([1.0, 0.5])
 
     known = np.array([[2.0, 1.0], [1.0, -1.0]])  # Jacobian for x = [1.0, 0.5]
-    found = calc_jacobian(x, jacobian)
+    found = nms.calc_jacobian(x, jacobian)
 
 
 def test_newtons_method():
@@ -73,7 +74,7 @@ def test_newtons_method():
     tol = 1e-6
     iter_max = 100
 
-    result = newtons_method(x0, residual, jacobian, tol, iter_max)
+    result = nms.newtons_method(x0, residual, jacobian, tol, iter_max)
 
     # Check the result
     known_result = np.array([1.0, 0.0])  # Expected solution for this system of equations
@@ -112,7 +113,7 @@ def test_newtons_method_convergence():
     tol = 1e-6
     iter_max = 100
 
-    result = newtons_method(x0, residual, jacobian, tol, iter_max)
+    result = nms.newtons_method(x0, residual, jacobian, tol, iter_max)
 
     known_result = np.array([1.0, 1.0])  # Expected solution for this system of equations
     assert np.allclose(known_result, result, atol=1e-6), f"Expected {known_result}, but got {result}"
@@ -150,7 +151,7 @@ def test_newtons_method_fail():
     tol = 1e-6
     iter_max = 10  # Set small number of iterations to trigger failure
 
-    result = newtons_method(x0, residual, jacobian, tol, iter_max)
+    result = nms.newtons_method(x0, residual, jacobian, tol, iter_max)
 
     # Failure is expected, check if result is None (i.e., convergence not reached)
     assert result is None, "Expected failure (None result), but got a solution"
