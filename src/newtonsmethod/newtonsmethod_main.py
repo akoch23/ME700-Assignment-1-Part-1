@@ -1,3 +1,4 @@
+
 import numpy as np
 
 def calc_residual(x, residual):
@@ -32,9 +33,9 @@ def calc_jacobian(x, jacobian):
     return J
 
 
-def newtons_method(x, residual, jacobian, tol, iterations_max):
+def newtons_method(x, residual, jacobian, tol, iter_max):
 # Check for valid iteration and tolerance values
-    if not isinstance(iterations_max, int) or iterations_max <= 0:
+    if not isinstance(iter_max, int) or iter_max <= 0:
         print("ERROR: iterations_max must be a positive integer.")
         return None
     if tol <= 0:
@@ -44,8 +45,11 @@ def newtons_method(x, residual, jacobian, tol, iterations_max):
 
     R = calc_residual(x,residual)
     J = calc_jacobian(x, jacobian)
-        
-     try:
+    
+    print("Initial residual:", R)
+    print("Initial Jacobian:", J)
+    
+    try:
         J_inv = np.linalg.inv(J)
     except np.linalg.LinAlgError:
         print("ERROR: Jacobian matrix is singular and cannot be inverted.")
@@ -53,10 +57,17 @@ def newtons_method(x, residual, jacobian, tol, iterations_max):
 
     # Initialize iteration process
     iter = 1
-    while np.linalg.norm(R) > tol and iter <= iterations_max:
-        x = x - np.dot(J_inv, R)
-        R = calc_residual(x, residual)
-        J = calc_jacobian(x, jacobian)
+    while np.linalg.norm(R) > tol and iter <= iter_max:
+        print("Initial residual norm:", np.linalg.norm(R))
+        x_new = x - np.dot(J_inv, R)
+        R = calc_residual(x_new, residual)
+        J = calc_jacobian(x_new, jacobian)
+        
+        print(f"Iteration {iter}:")
+        print("Residual:", R)
+        print("Jacobian:", J)
+        
+        
         try:
             J_inv = np.linalg.inv(J)
         except np.linalg.LinAlgError:
@@ -65,19 +76,15 @@ def newtons_method(x, residual, jacobian, tol, iterations_max):
  
             
         iter += 1
-        if iter > iterations_max:
+        if iter > iter_max:
             # Check if maximum number of iterations is exceeded
             print("ERROR: Maximum number of iterations exceeded.")
 
-        if np.linalg.norm(R) > tol:
+        if np.linalg.norm(R) <= tol:
             # If convergence is not reached
             print("ERROR: Newton's method did not converge within the maximum iterations.")
             return None
 
     # Output the result (solution) after convergence
-    result = print("By iteration ", iter, "the solution is: ", x)
-    return x
-
-
-
-
+    result = print("By iteration ", iter, "the solution is: ", x_new)
+    return x_new
