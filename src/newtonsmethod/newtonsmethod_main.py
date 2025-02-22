@@ -62,10 +62,11 @@ def newtons_method(x, residual, jacobian, tol, iter_max):
         x_new = x - np.dot(J_inv, R)
         R = calc_residual(x_new, residual)
         J = calc_jacobian(x_new, jacobian)
-        
-        print(f"Iteration {iter}:")
-        print("Residual:", R)
-        print("Jacobian:", J)
+
+ # Debug checks       
+ #       print(f"Iteration {iter}:")
+ #       print("Residual:", R)
+ #       print("Jacobian:", J)
         
         
         try:
